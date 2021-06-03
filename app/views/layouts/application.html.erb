@@ -1,7 +1,73 @@
 <!DOCTYPE html>
 <html>
+<title>Baltimore Ravens Scouting Report</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
+    #main {
+        display: flex;
+        min-height: calc(200vh - 20vh);
+    }
+    #main > article {
+        flex: 1;
+    }
+    #main > nav{
+        flex-grow: 0 0 auto;
+        background: black;
+        font-family: Verdana, serif;
+        text-align: center;
+        font-size: 25px;
+        color: white;
+
+    }
+    #main > nav {
+        order: -1;
+    }
+    header, footer, article, nav {
+        padding: 1em;
+    }
+
+    header {
+        background: #241773;
+        height: 20vh;
+        font-family: matrixbold, serif;
+        text-align: center;
+        font-size: 50px;
+        color: white;
+
+
+
+    }
+
+    footer {
+        background: #9E7C0C;
+        padding: 20px;
+        font-family: matrixbold, serif;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        position:fixed;
+        bottom:0;
+        left:0;width:100%;
+
+    }
+
+    form  { display: table;      }
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; }
+
+
+    .formfield * {
+        vertical-align: middle;
+    }
+
+</style>
   <head>
-    <title>Report</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

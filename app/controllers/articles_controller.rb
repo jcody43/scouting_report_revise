@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
-  end
+    end
 
   def show
-  @article = Article.find(params[ :id])
+  @article = Article.find(params[:id])
   end
 
   def new
@@ -15,18 +15,30 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article_params])
 
     if @article.save
+      redirect_to @article, :notice => "Player Saved"
+    else
+      render "new"
+    end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
       redirect_to @article
     else
-      render :new
+      render :edit
     end
-    end
+  end
 
 
       private
       def article_params
-        params.require(:article).permit(:author, :player_name, :college,
-                                        :position, :positions_flex, :height, :weight,
-                                        :athletic_ability, :strengths, :weaknesses, :summary, :grade)
+        params.require(:article).permit([:author][:player_name][:college][:position][:positions_flex][:height][:weight][:athletic_ability][:strengths][:weaknesses][:summary][:grade])
 
       end
 

@@ -1,5 +1,4 @@
-<html>
-
+<!doctype html>
 <title>Baltimore Ravens Scouting Report</title>
 <style>
     * {
@@ -68,27 +67,19 @@
 
 </style>
 <body>
+<div id=main>
 <header>
   <img src="https://seeklogo.com/images/B/baltimore-ravens-logo-C6A34E403C-seeklogo.com.png" align="left" alt="Ravens Logo"
        width="180px" height="80">
   Baltimore Ravens Scouting Report
 </header>
 <article>
+
 <h1>Please Enter Player Information</h1>
 <br>
 <%= form_with model: @article do |form| %>
-  <div>
     Author: <%= form.text_field :author %><br/><br>
-    <% @article.errors.full_messages_for(:author).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
     Player Name: <%= form.text_field :player_name %><br/><br>
-    <% @article.errors.full_messages_for(:player_name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
   College: <%= form.text_field :college %><br/><br>
   Position: <%= form.text_field :position %><br/><br>
   Positions (Flex): <%= form.text_field :positions_flex %><br/><br>
@@ -100,7 +91,7 @@
   Summary: <%= form.text_area :summary %><br/><br>
   Overall Grade: <%= form.text_field :grade %><br/><br>
 
-  <%= form.submit %>
+  <%= form.submit "Save Player" %>
 <% end %>
 
 
@@ -113,12 +104,14 @@
 
 
 </nav>
+</div>
 
-</body>
 <footer>Contact us: 1 Winning Drive Owings Mills MD 21117<br> <br><span id="datetime"></span><script>
     var dt = new Date();
     document.getElementById("datetime").innerHTML = dt.toLocaleString();
 </script></footer>
+
+</body>
 
 </html>
 
