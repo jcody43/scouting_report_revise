@@ -1,0 +1,108 @@
+<html>
+<title>Baltimore Ravens Scouting Report</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
+    #main {
+        display: flex;
+        min-height: calc(200vh - 20vh);
+    }
+    #main > article {
+        flex: 1;
+    }
+    #main > nav{
+        flex-grow: 0 0 auto;
+        background: black;
+        font-family: Verdana, serif;
+        text-align: center;
+        font-size: 25px;
+        color: white;
+
+    }
+    #main > nav {
+        order: -1;
+    }
+    header, footer, article, nav {
+        padding: 1em;
+    }
+
+    header {
+        background: #241773;
+        height: 20vh;
+        font-family: matrixbold, serif;
+        text-align: center;
+        font-size: 50px;
+        color: white;
+
+
+
+    }
+
+    footer {
+        background: #9E7C0C;
+        padding: 20px;
+        font-family: matrixbold, serif;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        position:fixed;
+        bottom:0;
+        left:0;width:100%;
+
+    }
+
+    form  { display: table;      }
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; }
+
+
+    .formfield * {
+        vertical-align: middle;
+    }
+
+</style>
+<body>
+<header>
+  <img src="https://seeklogo.com/images/B/baltimore-ravens-logo-C6A34E403C-seeklogo.com.png" align="left" alt="Ravens Logo"
+       width="180px" height="80">
+  Baltimore Ravens Scouting Report
+</header>
+
+
+  <article>
+    <%= link_to "New Player", new_article_path %>
+
+  </article>
+
+  <nav>Prospects
+
+    <ul>
+      <% @articles.each do |article| %>
+        <li>
+          <a href="/articles/<%= article.id %>">
+            <%= article.player_name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+
+
+  </nav>
+
+</div>
+<footer>Contact us: 1 Winning Drive Owings Mills MD 21117<br> <br><span id="datetime"></span><script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script></footer>
+
+
+
+
+
+</body>
+</html>
