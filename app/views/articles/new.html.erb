@@ -99,16 +99,21 @@
   <br>
   <br>
 
-  <%=link_to "article", params[:id] %>
-  <%= link_to "New Player", params[:player_name] %>
+  <h2>View Saved Players</h2>
+  <%= button_to "Saved Players", articles_path(@articles), :method => "get" %>
+  <br>
+
 
 </article>
 
-<nav>Prospects
 
 
 
-</nav>
+
+
+
+
+
 </div>
 
 <footer>Contact us: 1 Winning Drive Owings Mills MD 21117<br> <br><span id="datetime"></span><script>

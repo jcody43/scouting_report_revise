@@ -75,9 +75,6 @@
 <div id=main>
   <article><h1>Saved Player Data</h1>
 
-    <%= @article %>
-    <br>
-    <br>
     <br>
     Author Name:
     <%= @article[:author] %>
@@ -116,16 +113,19 @@
     <%= @article[:grade] %>
     <br>
     <br>
+    <br>
+    <br>
 
 
-    <%= link_to 'New Player', articles_path(@article) %>
+
+    <%= button_to "Return", articles_path(@article), :method => "get" %>
+    <br>
+    <br>
+
 
 
   </article>
-  <nav>Prospects
 
-
-  </nav>
 
 
   <footer>Contact us: 1 Winning Drive Owings Mills MD 21117<br> <br><span id="datetime"></span><script>

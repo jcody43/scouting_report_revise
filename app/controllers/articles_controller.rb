@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article, :notice => "Player Saved"
        else
-      #    render :new
+         render :new
     end
   end
 
