@@ -1,8 +1,142 @@
-<html>
-<%= link_to 'Player Data', articles_path(@article) %>
+<!doctype html>
+<title>Baltimore Ravens Scouting Report</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
+    #main {
+        display: flex;
+        min-height: calc(200vh - 20vh);
+    }
+    #main > article {
+        flex: 1;
+    }
+    #main > nav{
+        flex-grow: 0 0 auto;
+        background: black;
+        font-family: Verdana, serif;
+        text-align: center;
+        font-size: 25px;
+        color: white;
 
-<p>
+    }
+    #main > nav {
+        order: -1;
+    }
+    header, footer, article, nav {
+        padding: 1em;
+    }
 
-</p>
+    header {
+        background: #241773;
+        height: 20vh;
+        font-family: matrixbold, serif;
+        text-align: center;
+        font-size: 50px;
+        color: white;
+
+
+
+    }
+
+    footer {
+        background: #9E7C0C;
+        padding: 20px;
+        font-family: matrixbold, serif;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        position:fixed;
+        bottom:0;
+        left:0;width:100%;
+
+    }
+
+    form  { display: table;      }
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; }
+
+
+    .formfield * {
+        vertical-align: middle;
+    }
+
+</style>
+<body>
+<header>
+  <img src="https://seeklogo.com/images/B/baltimore-ravens-logo-C6A34E403C-seeklogo.com.png" align="left" alt="Ravens Logo"
+       width="180px" height="80">
+  Baltimore Ravens Scouting Report
+</header>
+<div id=main>
+  <article><h1>Saved Player Data</h1>
+
+    <%= @article %>
+    <br>
+    <br>
+    <br>
+    Author Name:
+    <%= @article[:author] %>
+    <br>
+    Player Name:
+    <%= @article[:player_name] %>
+    <br>
+    College:
+    <%= @article[:college] %>
+    <br>
+    Position:
+    <%= @article[:position] %>
+    <br>
+    Positions (Flex):
+    <%= @article[:positions_flex] %>
+    <br>
+    Height (Inches):
+    <%= @article[:height] %>
+    <br>
+    Weight (Pounds):
+    <%= @article[:weight] %>
+    <br>
+    Athletic Ability:
+    <%= @article[:athletic_ability] %>
+    <br>
+    Strengths:
+    <%= @article[:strengths] %>
+    <br>
+    Weaknesses:
+    <%= @article[:weaknesses] %>
+    <br>
+    Summary:
+    <%= @article[:summary] %>
+    <br>
+    Overall Grade:
+    <%= @article[:grade] %>
+    <br>
+    <br>
+
+
+    <%= link_to 'New Player', articles_path(@article) %>
+
+
+  </article>
+  <nav>Prospects
+
+
+  </nav>
+
+
+  <footer>Contact us: 1 Winning Drive Owings Mills MD 21117<br> <br><span id="datetime"></span><script>
+      var dt = new Date();
+      document.getElementById("datetime").innerHTML = dt.toLocaleString();
+  </script></footer>
+</div>
+</body>
+
+
+
+
 
 </html>

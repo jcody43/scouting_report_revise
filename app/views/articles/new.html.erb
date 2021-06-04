@@ -67,12 +67,14 @@
 
 </style>
 <body>
-<div id=main>
+
 <header>
   <img src="https://seeklogo.com/images/B/baltimore-ravens-logo-C6A34E403C-seeklogo.com.png" align="left" alt="Ravens Logo"
        width="180px" height="80">
   Baltimore Ravens Scouting Report
 </header>
+
+<div id="main">
 <article>
 
 <h1>Please Enter Player Information</h1>
@@ -94,8 +96,11 @@
   <%= form.submit "Save Player" %>
 <% end %>
 
+  <br>
+  <br>
 
-  <%= link_to "New Player", new_article_path %>
+  <%=link_to "article", params[:id] %>
+  <%= link_to "New Player", params[:player_name] %>
 
 </article>
 
