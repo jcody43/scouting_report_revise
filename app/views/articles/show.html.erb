@@ -118,10 +118,15 @@
 
 
 
-    <%= button_to "Return", articles_path(@article), :method => "get" %>
+    <%= button_to "Return to Players", articles_path(@article), :method => "get" %>
     <br>
     <br>
-
+    <%= button_to "Edit Player", edit_article_path(@article), :method => "get" %>
+    <br>
+    <br>
+    <%= button_to "Destroy", article_path(@article),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
 
 
   </article>
