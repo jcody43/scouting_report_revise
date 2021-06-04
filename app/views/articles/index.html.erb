@@ -78,7 +78,7 @@
 
   <article>
     <h1> Select the Link to Create a New Player</h1>
-    <%= link_to "New Player", new_article_path %>
+    <%= button_to "New Player", new_article_path(@article), :method => "get" %>
 
   </article>
 
