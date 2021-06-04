@@ -79,9 +79,21 @@
 
 <h1>Please Enter Player Information</h1>
 <br>
+  <div>
 <%= form_with model: @article do |form| %>
-    Author: <%= form.text_field :author %><br/><br>
-    Player Name: <%= form.text_field :player_name %><br/><br>
+    Author: <%= form.text_field :author %>
+    <% @article.errors.full_messages_for(:author).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+      </div>
+    <br/><br>
+      <div>
+    Player Name: <%= form.text_field :player_name %>
+      <% @article.errors.full_messages_for(:player_name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+        </div>
+      <br/><br>
   College: <%= form.text_field :college %><br/><br>
   Position: <%= form.text_field :position %><br/><br>
   Positions (Flex): <%= form.text_field :positions_flex %><br/><br>
