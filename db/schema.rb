@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_221927) do
   create_table "articles", force: :cascade do |t|
     t.string "author"
     t.string "player_name"
-    t.string "college"
+    t.string"college"
     t.string "position"
     t.string "positions_flex"
     t.integer "height"

@@ -1,2 +1,6 @@
 class Article < ApplicationRecord
-  end
+
+  has_many :articles
+
+
+end
